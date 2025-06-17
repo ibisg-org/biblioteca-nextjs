@@ -1,8 +1,10 @@
 name: Docker
+env:
+  ENV_FILE: ${{ contains(github.ref_name, '-dev') && secrets.ENV_WITH_SECRETS_DEV || secrets.ENV_WITH_SECRETS }}
 on:
   push:
-    branches:
-      - main
+    tags:
+      - v*
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -27,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: upalatucci/biblioteca:latest
+          tags: upalatucci/biblioteca:${{github.ref_name}}
           secrets: |
-            "ENV_WITH_SECRETS=${{ secrets.ENV_WITH_SECRETS_DEV }}"
+            "ENV_WITH_SECRETS=${{ env.ENV_FILE }}"
