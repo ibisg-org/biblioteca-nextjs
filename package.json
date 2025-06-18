@@ -2,7 +2,7 @@
   "name": "biblioteca-nextjs",
   "private": true,
   "scripts": {
-    "postinstall": "npx prisma generate",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
