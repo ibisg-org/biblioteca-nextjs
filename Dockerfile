@@ -20,6 +20,11 @@ COPY . .
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV ELASTIC_SEARCH_USERNAME=elastic
+ENV ELASTIC_SEARCH_PASSWORD=password
+ENV ELASTIC_SEARCH_URL=https://sd.sgi-italia.org:8881
+ENV ELASTIC_SEARCH_INDEX=bibliotecawpsgiitaliaorgsite-post-1
 ENV REVALIDATE_SECRET=''
 
 RUN --mount=type=secret,id=SENTRY_SECRET,dst=./.sentryclirc --mount=type=secret,id=ENV_WITH_SECRETS,required \
