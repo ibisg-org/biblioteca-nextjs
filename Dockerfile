@@ -56,6 +56,6 @@ USER nextjs
 EXPOSE 3000
 
 ENV PORT 3000
-ENV DATABASE_URL 'mysql://b1bl10:dR9rz9&5@biblioteca.sgi-italia.org:3306/sgiitalia_b1bl10'
+ENV DATABASE_URL ''
 
 CMD ["node", "server.js"]
