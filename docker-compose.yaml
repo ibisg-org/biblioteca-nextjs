@@ -12,8 +12,8 @@ services:
       - "3000:3000"
     image: biblioteca-app
     env_file:
-      - .env.local
+      - .env
       
 secrets:
   ENV_WITH_SECRETS:
-    file: .env.local
+    file: .env
