@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ibisg/biblioteca:${{github.ref_name}}
+          tags: upalatucci/biblioteca:${{github.ref_name}}
           secrets: |
             "ENV_WITH_SECRETS=${{ env.ENV_FILE }}"

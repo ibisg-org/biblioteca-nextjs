@@ -40,6 +40,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: false
-          tags: ibisg/biblioteca:latest
+          tags: upalatucci/biblioteca:latest
           secrets: |
             "ENV_WITH_SECRETS=${{ secrets.ENV_WITH_SECRETS_DEV }}"
