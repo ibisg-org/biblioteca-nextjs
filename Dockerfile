@@ -25,7 +25,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 ENV REVALIDATE_SECRET=''
 
 RUN --mount=type=secret,id=SENTRY_SECRET,dst=./.sentryclirc --mount=type=secret,id=ENV_WITH_SECRETS,required \
-  source /run/secrets/ENV_WITH_SECRETS && npm run build
+  ENV_PATH=/run/secrets/ENV_WITH_SECRETS npm run build
 
 # If using npm comment out above and use below instead
 # RUN npm run build
