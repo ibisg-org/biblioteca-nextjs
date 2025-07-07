@@ -1,11 +1,10 @@
-name: Deploy
+name: Docker
 on:
   push:
     branches:
       - main
 jobs:
-  deploy:
-    name: deploy
+  docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,7 +27,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: upalatucci/biblioteca:latest
+          tags: ibisg/biblioteca:latest
           secrets: |
-            "ENV_WITH_SECRETS=${{ secrets.ENV_WITH_SECRETS }}"
-            "SENTRY_SECRET=${{ secrets.SENTRY_SECRET }}"
+            "ENV_WITH_SECRETS=${{ secrets.ENV_WITH_SECRETS_DEV }}"
