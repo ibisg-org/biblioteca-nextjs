@@ -1,4 +1,6 @@
-import "./env.mjs";
+const dotenv = require("dotenv");
+
+if (process.env.ENV_PATH) dotenv.config({ path: process.env.ENV_PATH });
 
 const withPWA = require("next-pwa")({
   dest: "public",
